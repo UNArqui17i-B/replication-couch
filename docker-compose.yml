@@ -1,0 +1,6 @@
+version: '2'
+services:
+  user-1:
+    build: .
+    environmental:
+      -

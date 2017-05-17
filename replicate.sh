@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 
 echo "--------------------------------edghddgh----------------------------------"
+export NODE1="http://10.0.0.2:9000"
+export NODE2="http://10.0.0.2:9010"
+export DB_NAME="blinkbox_files"
 curl -X PUT ${NODE1}/_replicator
 curl -X PUT ${NODE2}/_replicator
 
