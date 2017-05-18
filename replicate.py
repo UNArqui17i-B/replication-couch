@@ -24,7 +24,7 @@ def replication():
         return 1
     conn.close()
 
-    # create database
+    # create _replicator
     conn = httplib.HTTPConnection(host_uri)
     conn.request('PUT', '/_replicator')
     response = conn.getresponse()
@@ -36,7 +36,7 @@ def replication():
         return 1
     conn.close()
 
-    # create database
+    # connect _replicator
     conn = httplib.HTTPConnection(host_uri)
     body = {
         '_id': host_url + '-to-' + target_url,
