@@ -4,4 +4,4 @@ WORKDIR /replication-couch
 COPY replicate.sh /replication-couch/
 
 #RUN chmod +x replicate.sh
-ENTRYPOINT ["/replication-couch//replicate.sh"]
+ENTRYPOINT ["./replicate.sh"]
