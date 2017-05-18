@@ -1,6 +1,6 @@
-FROM klaemo/couchdb:2.0-single
+FROM python:2.7-alpine
 
 WORKDIR /replication-couch
 COPY replicate.py /replication-couch/
 
-ENTRYPOINT ["python", "replicate.py"]
+CMD [ "python", "./replicate.py" ]

@@ -1,23 +1,17 @@
 version: '2'
 services:
-  user-1:
+  replicate:
     build: .
     environment:
       TARGET_URL: "localhost"
       TARGET_PORT: "9000"
       HOST_URL: "localhost"
-      HOST_PORT: "9001"
+      HOST_PORT: "5984"
       DB_NAME: "blinkbox_files"
-    ports:
-      - '9001:9001'
+    links:
+      - couch-db
 
-  user-2:
-    build: .
-    environment:
-      TARGET_URL: "localhost"
-      TARGET_PORT: "9001"
-      HOST_URL: "localhost"
-      HOST_PORT: "9000"
-      DB_NAME: "blinkbox_files"
+  couch-db:
+    image: klaemo/couchdb:2.0-single
     ports:
-      - '9000:9000'
+      - '9001:5984'

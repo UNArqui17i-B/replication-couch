@@ -1,8 +1,11 @@
 import os
 import httplib
 import json
+import time
 
 def replication():
+    time.sleep(5)
+    
     # set environmental variables
     target_url = os.environ['TARGET_URL']
     target_port = os.environ['TARGET_PORT']
